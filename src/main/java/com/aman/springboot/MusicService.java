@@ -14,7 +14,7 @@ public class MusicService {
     @CacheEvict(allEntries = true)
     public void clearCache(){}
 
-    @Cacheable(condition = "#instrument.equals('trombone')")
+    @Cacheable(condition = "#instrument.equals('piano')")
     public String play(String instrument) {
         log.info("Executing: " + this.getClass().getSimpleName() + ".play(\"" + instrument + "\");");
         return "paying " + instrument + "!";

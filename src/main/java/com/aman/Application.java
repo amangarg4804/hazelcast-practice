@@ -1,5 +1,6 @@
-package com.aman.springboot;
+package com.aman;
 
+import com.aman.springboot.MusicService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -31,16 +32,5 @@ public class Application implements CommandLineRunner {
         log.info("Using cache manager: " + cacheManager.getClass().getName());
 
         musicService.clearCache();
-
-        play("trombone");
-        play("guitar");
-        play("trombone");
-        play("bass");
-        play("trombone");
-    }
-
-    private void play(String instrument){
-        log.info("Calling: " + MusicService.class.getSimpleName() + ".play(\"" + instrument + "\");");
-        musicService.play(instrument);
     }
 }
